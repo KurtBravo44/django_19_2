@@ -1,1 +1,18 @@
-{"name": "даня", "phone": "123123123", "message": "привет"}
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "category_name": "Овощи",
+      "category_description": "Вкусные ребята"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "category_name": "Фрукты",
+      "category_description": "Вкусные ребята"
+    }
+  }
+]
