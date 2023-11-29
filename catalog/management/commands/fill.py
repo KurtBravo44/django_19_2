@@ -1,7 +1,7 @@
 from django.core.management import BaseCommand
 
 from catalog.models import Category, Product
-from django.db.models import Max
+
 
 
 class Command(BaseCommand):
