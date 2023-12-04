@@ -23,9 +23,9 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:view' pk=object.pk %}'">Посмотреть</button>
-                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:edit' pk=object.pk %}'">Изменить</button>
-                        <button type="button" class="btn btn-lg btn-sm btn-danger" onclick="window.location.href='{% url 'catalog:delete' pk=object.pk %}'">Удалить</button>
+                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:view' slug=object.slug %}'">Посмотреть</button>
+                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:edit' slug=object.slug %}'">Изменить</button>
+                        <button type="button" class="btn btn-lg btn-sm btn-danger" onclick="window.location.href='{% url 'catalog:delete' slug=object.slug %}'">Удалить</button>
                         </div>
                     </div>
                 </div>
