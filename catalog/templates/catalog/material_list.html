@@ -1,0 +1,35 @@
+{% extends 'catalog/layout.html' %}
+{% load my_tags %}
+{% block head %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Материалы</h1>
+    <p class="lead">Эти материалы могут быть вам полезны!</p>
+    <a class="btn btn-outline-primary" href="{% url 'catalog:create' %}">Добавить материал</a>
+
+
+</div>
+{% endblock %}
+
+
+{% block title %}
+<div class="container">
+    <div class="row text-center">
+        {% for object in object_list %}
+        <div class="col-md-6">
+            <div class="card mb-4 box-shadow overflow-hidden w-100">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:view' pk=object.pk %}'">Посмотреть</button>
+                        <button type="button" class="btn btn-lg btn-sm btn-primary" onclick="window.location.href='{% url 'catalog:edit' pk=object.pk %}'">Изменить</button>
+                        <button type="button" class="btn btn-lg btn-sm btn-danger" onclick="window.location.href='{% url 'catalog:delete' pk=object.pk %}'">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}

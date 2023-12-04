@@ -26,7 +26,7 @@
                         <img src="{{ object.image|mediapath }}" />
 
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-success" onclick="window.location.href='{% url 'catalog:product' id=object.id %}'">Купить</button>
+                    <button type="button" class="btn btn-lg btn-block btn-success" onclick="window.location.href='{% url 'catalog:product' pk=object.pk %}'">Купить</button>
                 </div>
             </div>
         </div>

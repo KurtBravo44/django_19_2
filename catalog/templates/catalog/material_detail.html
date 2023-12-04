@@ -1,0 +1,39 @@
+{% extends 'catalog/layout.html' %}
+{% load my_tags %}
+{% block head %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Материалы</h1>
+    <p class="lead">Эти материалы могут быть вам полезны!</p>
+
+</div>
+{% endblock %}
+
+
+{% block title %}
+<div class="container">
+    <div class="row text-center">
+
+        <div class="col-md-12">
+            <div class="card mb-4 box-shadow overflow-hidden w-100">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.title }} ({{ object.slug }})</h4>
+                </div>
+
+                <div class="card-body">
+                    <img src="{{ object.image|mediapath }}" />
+                    <p>
+                        {{ object.body }}
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    Просмотры: {{ object.views_count }}
+                </div>
+
+                <button type="button" class="btn btn-lg btn-block btn-primary" onclick="window.location.href='{% url 'catalog:list' %}'">Назад</button>
+
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
