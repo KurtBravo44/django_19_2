@@ -1,3 +1,5 @@
+from typing import Optional
+
 from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
@@ -22,6 +24,8 @@ class Product(models.Model):
         ordering = ('price',)
 
 
+
+
 class Category(models.Model):
     category_name = models.CharField(max_length=50, verbose_name='название')
     category_description = models.TextField(verbose_name='описание', **NULLABLE)
@@ -34,22 +38,15 @@ class Category(models.Model):
         ordering = ('category_name',)
 
 
-class Material(models.Model):
-    title = models.CharField(max_length=100, verbose_name='название')
-    body = models.TextField(verbose_name='содержимое')
-
-    time_create = models.DateTimeField(auto_now_add=True, verbose_name='дата создания', null=True, blank=True)
-    image = models.ImageField(upload_to='materials/', **NULLABLE)
-    views_count = models.IntegerField(default=0, verbose_name='просмотры')
-    is_published = models.BooleanField(default=True, verbose_name='опубликовано')
-    slug = models.CharField(max_length=100, verbose_name='slug', null=True, blank=True)
+class Version(models.Model):
+    product_name = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='продукт')
+    number = models.IntegerField(verbose_name='номер версии')
+    title = models.CharField(max_length=100, verbose_name='нахвание версии')
+    current = models.BooleanField(default=False, verbose_name='признак текущей версии')
 
     def __str__(self):
-        return self.title
-
-
+        return f'{self.product_name} {self.current}'
 
     class Meta:
-        verbose_name = 'материал'
-        verbose_name_plural = 'материалы'
-
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
