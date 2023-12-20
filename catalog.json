@@ -1,0 +1,98 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Молоко",
+      "description": "Молоко — питательная жидкость, вырабатываемая молочными железами самок млекопитающих во время лактации. Естественное назначение молока — вскармливание потомства (в том числе и у человека), которое ещё не способно переваривать другую пищу. В настоящее время молоко входит в состав многих продуктов, используемых человеком, а его производство стало крупной отраслью промышленности. Молоко — многокомпонентная полидисперсная система, в которой все составные вещества находятся в тонкодисперсном состоянии, что обеспечивает молоку жидкую консистенцию. Технический регламент определяет молоко как продукт нормальной физиологической секреции молочных желез сельскохозяйственных животных, полученный от одного или нескольких животных в период лактации при одном и более доении, без каких-либо добавлений к этому продукту.",
+      "image": "",
+      "category": 25,
+      "price": 150,
+      "time_create": "2023-11-28T22:52:30.451Z",
+      "time_update": "2023-11-28T22:52:30.451Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Яблоко",
+      "description": "Очень вкусный фрукт",
+      "image": "",
+      "category": 23,
+      "price": 10,
+      "time_create": "2023-11-28T22:53:01.605Z",
+      "time_update": "2023-11-28T22:53:01.605Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Банан",
+      "description": "Желтый фрукт",
+      "image": "products/banan.png",
+      "category": 23,
+      "price": 50,
+      "time_create": "2023-11-29T00:30:21.665Z",
+      "time_update": "2023-12-19T08:02:22.105Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "noviyu",
+      "description": "ДАДА",
+      "image": "",
+      "category": 25,
+      "price": 100,
+      "time_create": "2023-12-19T03:47:48.313Z",
+      "time_update": "2023-12-19T03:52:21.272Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 23,
+    "fields": {
+      "category_name": "Фрукт",
+      "category_description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 24,
+    "fields": {
+      "category_name": "Овощ",
+      "category_description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 25,
+    "fields": {
+      "category_name": "Молочные",
+      "category_description": "Сделаны из молока"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product_name": 4,
+      "number": 1,
+      "title": "Вкусный",
+      "current": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product_name": 4,
+      "number": 2,
+      "title": "Еще вкуснее!",
+      "current": true
+    }
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "model": "material.material",
+    "pk": 1,
+    "fields": {
+      "title": "тест",
+      "body": "testik",
+      "time_create": "2023-12-19T03:19:12.314Z",
+      "image": "",
+      "views_count": 2,
+      "is_published": true,
+      "slug": "test"
+    }
+  }
+]
