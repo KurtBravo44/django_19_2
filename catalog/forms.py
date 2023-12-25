@@ -21,6 +21,7 @@ class ProductForm(forms.ModelForm):
                   'image',
                   'category',
                   'price',
+                  'is_published',
                   )
 
     def clean_name(self):
@@ -59,6 +60,15 @@ class VersionFormSet(BaseInlineFormSet):
         if cont_cur_version > 1:
             raise forms.ValidationError('Только одна версия может быть активной')
 
+
+class ModeratorForm(forms.ModelForm):
+
+    class Meta:
+        model = Product
+        fields = ('description',
+                  'category',
+                  'is_published',
+                  )
 
 
 

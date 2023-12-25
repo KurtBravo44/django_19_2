@@ -13,6 +13,8 @@ from users.models import User
 from users.services import send_mail
 
 
+from django.contrib.auth.models import Group
+
 class LoginView(BaseLoginView):
     template_name = 'users/login.html'
 
@@ -32,6 +34,11 @@ class RegisterView(CreateView):
             _message='Поздравляю, вы зарегистрировались на нашем сайте!',
             _subject='Верификация'
         )
+        ###
+
+        my_group = Group.objects.get(name='Клиенты')
+        my_group.user_set.add(new_user)
+        ###
         return super().form_valid(form)
 
 class UserUpdateView(UpdateView):

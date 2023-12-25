@@ -16,6 +16,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='цена за штуку')
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='дата обновления')
+    is_published = models.BooleanField(default=False, verbose_name='опубликовано')
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='продавец')
 
