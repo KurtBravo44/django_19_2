@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.cache import cache
 from django.forms import inlineformset_factory
 from django.shortcuts import render, redirect
 import json
@@ -9,7 +10,22 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from catalog.forms import ProductForm, VersionForm, ModeratorForm
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
+from catalog.services import get_cached_data
+from config.settings import CACHE_ENABLED
+
+
+def category(request):
+    category_list = Category.objects.all()
+    get_cached_data('category_list')
+
+
+    context = {
+        'object_list': category_list,
+        'title': 'Категории'
+    }
+
+    return render(request, 'catalog/categories.html' ,context)
 
 
 class ProductListView(ListView):
